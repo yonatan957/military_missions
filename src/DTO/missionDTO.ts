@@ -5,5 +5,5 @@ export default interface MissionDTO{
     status:statusEnum,
     priority:string,
     description:string,
-    id:string
+    _id:string
 }

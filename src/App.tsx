@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import MissionDTO from "./DTO/missionDTO"
 import Board from "./components/Board";
+import Details from "./components/Details";
 
 const BASE_URL="https://reactexambackend.onrender.com/missions/8854554"
 
@@ -18,6 +19,7 @@ function App() {
   },[])
   return (
     <>
+      <Details/>
       <Board missions={missions}/>
     </>
   )
