@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <Details/>
-      <Board missions={missions}/>
+      <Board setMissons={setMissons} missions={missions}/>
     </>
   )
 }
