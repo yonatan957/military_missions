@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="app">
       <Details setMissons={setMissons}/>
-      <Board setMissons={setMissons} missions={missions}/>
+      {missions.length?<Board setMissons={setMissons} missions={missions}/>: <div><h1>No missions:</h1></div>}
     </div>
   )
 }
