@@ -2,8 +2,6 @@ import { FormEvent, useState } from "react";
 import statusEnum from "../Enums/statusEnum";
 import MissionDTO from "../DTO/missionDTO";
 
-const BASE_URL="https://reactexambackend.onrender.com/missions/8854554"
-
 interface props{
     setMissons:(x:(x:MissionDTO[])=>MissionDTO[])=>void
 }
@@ -18,7 +16,7 @@ export default function Details({setMissons}:props) {
         event.preventDefault();
         (async()=>{
             try {
-                const response = await fetch(BASE_URL,{
+                const response = await fetch(import.meta.env.VITE_BASE_URL,{
                     method:"POST",
                     body:JSON.stringify({name, status, priority, description}),
                     headers: {"Content-type": "application/json; charset=UTF-8"}

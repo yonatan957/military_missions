@@ -1,8 +1,6 @@
 import MissionDTO from "../DTO/missionDTO"
 import statusEnum from "../Enums/statusEnum"
 
-const BASE_URL="https://reactexambackend.onrender.com/missions/8854554/"
-
 interface props{
     mission:MissionDTO,
     setMissons:(x:(x:MissionDTO[])=>MissionDTO[])=>void
@@ -11,7 +9,7 @@ export default function Card({mission, setMissons}:props) {
     const color = mission.status == statusEnum.Pending? "rgb(237, 115, 115)" : mission.status == statusEnum.Progress? "rgb(245, 189, 86)":"lightgreen";
     const deleteMission = async ()=>{
         try {
-            const response = await fetch(BASE_URL + mission._id,{
+            const response = await fetch(import.meta.env.VITE_BASE_URL +"/"+ mission._id,{
                 method:"DELETE",
                 body:"",
                 headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -24,13 +22,13 @@ export default function Card({mission, setMissons}:props) {
     }
     const updateMission = async()=>{
         try {
-            const response = await fetch(BASE_URL + "progress/" + mission._id,{
+            const response = await fetch(import.meta.env.VITE_BASE_URL + "/progress/" + mission._id,{
                 method:"POST",
                 body:"",
                 headers: {"Content-type": "application/json; charset=UTF-8"}
             })
             if(!response.ok){throw new Error("faild while trying to update")}
-            const response2 = await fetch(BASE_URL)
+            const response2 = await fetch(import.meta.env.VITE_BASE_URL)
             setMissons(await response2.json())
         } catch (error) {
             console.log(error)
