@@ -18,10 +18,10 @@ function App() {
     })()
   },[])
   return (
-    <>
-      <Details/>
+    <div className="app">
+      <Details setMissons={setMissons}/>
       <Board setMissons={setMissons} missions={missions}/>
-    </>
+    </div>
   )
 }
 

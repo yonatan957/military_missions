@@ -8,7 +8,7 @@ interface props{
     setMissons:(x:(x:MissionDTO[])=>MissionDTO[])=>void
 }
 export default function Card({mission, setMissons}:props) {
-    const color = mission.status == statusEnum.Pending? "red" : mission.status == statusEnum.Progress? "orange":"green";
+    const color = mission.status == statusEnum.Pending? "rgb(237, 115, 115)" : mission.status == statusEnum.Progress? "rgb(245, 189, 86)":"lightgreen";
     const deleteMission = async ()=>{
         try {
             const response = await fetch(BASE_URL + mission._id,{
@@ -30,21 +30,22 @@ export default function Card({mission, setMissons}:props) {
                 headers: {"Content-type": "application/json; charset=UTF-8"}
             })
             if(!response.ok){throw new Error("faild while trying to update")}
-            setMissons(mission=>mission)
+            const response2 = await fetch(BASE_URL)
+            setMissons(await response2.json())
         } catch (error) {
             console.log(error)
         }
     }
     return (
-    <div style={{backgroundColor:color}}>
-        <div >
+    <div className="card" style={{backgroundColor:color}}>
+        <div>
             <h1>Name: {mission.name}</h1>
             <h3>Status: {mission.status}</h3>
             <h3>Priority: {mission.priority}</h3>
             <h3>Descriptio: {mission.description}</h3>
         </div>
         <div>
-            <button style={{backgroundColor:"red"}} onClick={deleteMission}>Delete</button>
+            <button style={{backgroundColor:"red", marginRight:"10px"}} onClick={deleteMission}>Delete</button>
             <button style={mission.status == statusEnum.Completed?{display:"none"}:{backgroundColor:"green"}} onClick={updateMission}>Update</button>
         </div>
     </div>
