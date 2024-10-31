@@ -24,7 +24,7 @@ export default function Details() {
         <input type="text" onChange={(e)=>{setName(e.target.value)}}/>
         <select onChange={(e)=>{setStatus(e.target.value)}}>
             <option value={statusEnum.Pending}>Pending</option>
-            <option value={statusEnum.Progress}>Progress</option>
+            <option value={statusEnum.Progress}>In Progress</option>
             <option value={statusEnum.Completed}>Completed</option>
         </select>
         <select onChange={(e)=>{setPriority(e.target.value)}}>

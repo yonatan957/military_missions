@@ -1,7 +1,6 @@
-enum statusEnum{
-    Pending = "Pending",
-    Progress = "Progress",
-    Completed = "Completed"
+enum statusEnum {
+  Pending = "Pending",
+  Progress = "In Progress",
+  Completed = "Completed",
 }
-
-export default statusEnum
+export default statusEnum;
