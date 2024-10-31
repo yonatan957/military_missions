@@ -3,6 +3,10 @@
     margin: 0;
     box-sizing: border-box;
     border-radius: 5px;
+    font-family: "Markazi Text", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 .app{
     padding: 4em 2em;
@@ -49,4 +53,13 @@ textarea{
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.addmission{
+    background-color: rgb(202, 248, 232);
+    width: 40%;
+    transition: transform 0;
+}
+.addmission:hover{
+    transform:scale(1.1) ;
 }

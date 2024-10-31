@@ -45,7 +45,7 @@ export default function Details({setMissons}:props) {
         </select>
         <label className="form_itemms" htmlFor="">Describe mission</label>
         <textarea className="form_itemms" cols={40} rows={5} onChange={(e)=>{setDescription(e.target.value)}}></textarea>
-        <input className="form_itemms" type="submit" value="Add mission" />
+        <input className="addmission" type="submit" value="Add mission" />
     </form>
   )
 }
