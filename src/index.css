@@ -31,6 +31,7 @@ form{
 }
 .form_itemms{
     width: 80%;
+    font-size: medium;
 }
 .board{
     width: 80%;
@@ -58,8 +59,20 @@ textarea{
 .addmission{
     background-color: rgb(202, 248, 232);
     width: 40%;
-    transition: transform 0;
+    transition: transform 0.3s;
 }
 .addmission:hover{
+    transform:scale(1.1) ;
+}
+select{
+    padding: 2px;
+}
+.card button{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 5em;
+    height: 2em;
+    transition: transform 0.3s;
+}
+.card button:hover{
     transform:scale(1.1) ;
 }
